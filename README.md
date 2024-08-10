@@ -1,2 +1,1 @@
-# swing-ping
-Django Swing | Ping
+# Django Swing | Ping
