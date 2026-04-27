@@ -27,7 +27,7 @@ Django = ">=4,<6"
 # =============================================================================
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^8.3.4"           # Framework for testing
+pytest = ">=8.3.4,<10.0.0"           # Framework for testing
 pytest-cov = ">=6.1.1,<8.0.0"       # Code coverage for tests
 black = "^24.8.0"           # Code formatter
 flake8 = "^7.2.0"           # Linter for code quality
