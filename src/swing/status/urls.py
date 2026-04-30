@@ -1,20 +1,13 @@
 from django.urls import path
-from .views import database_status, celery_status
-
-urlpatterns = [
-    path('status/dashboard/', status_dashboard, name='status_dashboard'),
-    path('status/database/', database_status, name='database_status'),
-    path('status/celery/', celery_status, name='celery_status'),
-]
-
-from django.urls import path
 from .views import (
+    status_dashboard,
     database_status, celery_status, redis_status, elasticsearch_status,
     external_api_status, disk_space_status, memory_usage_status, 
     cpu_load_status, settings_check, email_server_status
 )
 
 urlpatterns = [
+    path('status/dashboard/', status_dashboard, name='status_dashboard'),
     path('status/database/', database_status, name='database_status'),
     path('status/celery/', celery_status, name='celery_status'),
     path('status/redis/', redis_status, name='redis_status'),

@@ -49,7 +49,7 @@ documentation = "https://github.com/swing-collection/swing-status/tree/dev/docs"
 
 [tool.poetry]
 package-mode = true
-packages = [{ include = "swing_status", from = "src" }]
+packages = [{ include = "swing", from = "src" }]
 
 
 # =============================================================================
@@ -91,7 +91,7 @@ mkdocs-material = "^9.5"
 # =============================================================================
 
 [project.scripts]
-swing_status = "swing_status.__main__:main"
+swing_status = "django.core.management:execute_from_command_line"
 
 
 # =============================================================================
@@ -99,7 +99,7 @@ swing_status = "swing_status.__main__:main"
 # =============================================================================
 
 [tool.poetry.plugins."django.apps"]
-"swing_status" = "swing_status.apps.SwingStatusAppConfig"
+"swing.status" = "swing.status.apps.SwingStatusConfig"
 
 
 # =============================================================================
