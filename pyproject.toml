@@ -91,7 +91,7 @@ mkdocs-material = "^9.5"
 # =============================================================================
 
 [project.scripts]
-swing_status = "django.core.management:execute_from_command_line"
+swing_status = "swing.status.__main__:main"
 
 
 # =============================================================================

@@ -1,7 +1,11 @@
-import psutil
 from django.http import JsonResponse
 
 def memory_usage_status(request):
+    try:
+        import psutil
+    except ImportError as exc:
+        return JsonResponse({'status': 'ERROR', 'message': f'Memory integration unavailable: {exc}'}, status=503)
+
     memory = psutil.virtual_memory()
     free_memory = memory.available / (1024 ** 3)
     

@@ -1,9 +1,10 @@
-import requests
 from django.http import JsonResponse
 
 def external_api_status(request):
     url = "https://api.example.com/health"  # Replace with the actual API endpoint
     try:
+        import requests
+
         response = requests.get(url, timeout=5)
         if response.status_code == 200:
             return JsonResponse({'status': 'OK', 'message': 'External API is operational'})

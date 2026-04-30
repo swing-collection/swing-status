@@ -1,7 +1,11 @@
-import psutil
 from django.http import JsonResponse
 
 def cpu_load_status(request):
+    try:
+        import psutil
+    except ImportError as exc:
+        return JsonResponse({'status': 'ERROR', 'message': f'CPU integration unavailable: {exc}'}, status=503)
+
     load = psutil.cpu_percent(interval=1)
     
     if load > 80:  # Trigger an alert if CPU load is above 80%

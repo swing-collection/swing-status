@@ -1,8 +1,11 @@
 from django.http import JsonResponse
-from celery.result import AsyncResult
-from swing_status.celery import app  # Assuming you have a celery app setup
 
 def celery_status(request):
+    try:
+        from celery.result import AsyncResult
+        from swing_status.celery import app  # Assuming you have a celery app setup
+    except ImportError as exc:
+        return JsonResponse({'status': 'ERROR', 'message': f'Celery integration unavailable: {exc}'}, status=503)
 
     result = AsyncResult('some-task-id', app=app)
 
