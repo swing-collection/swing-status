@@ -45,9 +45,9 @@
 # source
 # ---------------------------------------------------------------------------
 # Directories to measure coverage for.
-# Measures coverage for the swing_status package.
+# Measures coverage for the swing.status package.
 #
-source = src/swing_status
+source = src/swing/status
 
 # ---------------------------------------------------------------------------
 # branch
@@ -100,8 +100,8 @@ omit =
 [paths]
 
 source =
-    src/swing_status
-    */site-packages/swing_status
+    src/swing/status
+    */site-packages/swing/status
 
 
 # =============================================================================

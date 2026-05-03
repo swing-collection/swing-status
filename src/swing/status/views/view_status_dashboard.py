@@ -1,5 +1,5 @@
-
 from django.shortcuts import render
 
+
 def status_dashboard(request):
-    return render(request, 'swing/status/status.html')
+    return render(request, "swing/status/status.html")

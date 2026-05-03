@@ -21,11 +21,8 @@ Defines URL patterns for the demo project. This includes:
 # Imports
 # =============================================================================
 
-# Import | Standard Library
-
-# Import | Libraries
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import include, path
 
 # Import | Local Modules
 
@@ -36,6 +33,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),  # Admin site URL
-    path("status/", include("swing.status.urls")),
     path("", include("swing.status.urls")),
 ]

@@ -32,8 +32,6 @@ and `ALLOWED_HOSTS` appropriately for deployment.
 # Import | Standard Library
 from pathlib import Path
 
-# Import | Libraries
-
 # Import | Local Modules
 
 
@@ -67,7 +65,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
     # Local apps
     "swing.status",  # Reusable app under development
 ]
@@ -136,7 +133,6 @@ DATABASES = {
 }
 
 
-
 # =============================================================================
 # Password Validation
 # =============================================================================
@@ -165,7 +161,6 @@ LANGUAGE_CODE = "en-us"  # Default language
 TIME_ZONE = "UTC"  # Default timezone
 USE_I18N = True  # Enable translations
 USE_TZ = True  # Use timezone-aware datetimes
-
 
 
 # =============================================================================
