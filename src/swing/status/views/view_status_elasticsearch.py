@@ -1,8 +1,8 @@
 from django.conf import settings
-from django.http import JsonResponse
+from django.http import HttpRequest, JsonResponse
 
 
-def elasticsearch_status(request):
+def elasticsearch_status(request: HttpRequest) -> JsonResponse:
     try:
         # Import | Libraries
         from elasticsearch import Elasticsearch

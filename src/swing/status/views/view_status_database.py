@@ -1,9 +1,9 @@
 from django.db import connections
 from django.db.utils import OperationalError
-from django.http import JsonResponse
+from django.http import HttpRequest, JsonResponse
 
 
-def database_status(request):
+def database_status(request: HttpRequest) -> JsonResponse:
     db_conn = connections["default"]
     try:
         db_conn.cursor()

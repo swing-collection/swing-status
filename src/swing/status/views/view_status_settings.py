@@ -1,8 +1,8 @@
 from django.conf import settings
-from django.http import JsonResponse
+from django.http import HttpRequest, JsonResponse
 
 
-def settings_check(request):
+def settings_check(request: HttpRequest) -> JsonResponse:
     essential_settings = ["DEBUG", "DATABASES", "CACHES", "ALLOWED_HOSTS"]
     missing_settings = [s for s in essential_settings if not hasattr(settings, s)]
 

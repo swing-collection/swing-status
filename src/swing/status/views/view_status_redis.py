@@ -1,8 +1,8 @@
 from django.conf import settings
-from django.http import JsonResponse
+from django.http import HttpRequest, JsonResponse
 
 
-def redis_status(request):
+def redis_status(request: HttpRequest) -> JsonResponse:
     try:
         # Import | Libraries
         import redis

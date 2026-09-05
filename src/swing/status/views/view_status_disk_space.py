@@ -1,10 +1,10 @@
 # Import | Standard Library
 import shutil
 
-from django.http import JsonResponse
+from django.http import HttpRequest, JsonResponse
 
 
-def disk_space_status(request):
+def disk_space_status(request: HttpRequest) -> JsonResponse:
     total, used, free = shutil.disk_usage("/")
     free_gb = free / (2**30)
 

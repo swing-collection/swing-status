@@ -1,7 +1,7 @@
-from django.http import JsonResponse
+from django.http import HttpRequest, JsonResponse
 
 
-def celery_status(request):
+def celery_status(request: HttpRequest) -> JsonResponse:
     try:
         # Import | Libraries
         from celery import current_app

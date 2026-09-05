@@ -1,7 +1,7 @@
-from django.http import JsonResponse
+from django.http import HttpRequest, JsonResponse
 
 
-def memory_usage_status(request):
+def memory_usage_status(request: HttpRequest) -> JsonResponse:
     try:
         # Import | Libraries
         import psutil

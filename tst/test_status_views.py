@@ -114,7 +114,7 @@ def test_redis_status_reports_ok(monkeypatch, settings) -> None:
 
     class FakeRedisClient:
         def __init__(self, **_kwargs):
-            pass
+            pass  # pylint: disable=unnecessary-pass
 
         def ping(self):
             return True
@@ -137,7 +137,7 @@ def test_elasticsearch_status_reports_ok(monkeypatch, settings) -> None:
 
     class FakeElasticsearch:
         def __init__(self, _hosts):
-            pass
+            pass  # pylint: disable=unnecessary-pass
 
         def ping(self):
             return True

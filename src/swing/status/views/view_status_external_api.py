@@ -1,7 +1,7 @@
-from django.http import JsonResponse
+from django.http import HttpRequest, JsonResponse
 
 
-def external_api_status(request):
+def external_api_status(request: HttpRequest) -> JsonResponse:
     url = "https://api.example.com/health"  # Replace with the actual API endpoint
     try:
         # Import | Libraries

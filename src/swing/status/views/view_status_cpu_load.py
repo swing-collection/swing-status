@@ -1,7 +1,7 @@
-from django.http import JsonResponse
+from django.http import HttpRequest, JsonResponse
 
 
-def cpu_load_status(request):
+def cpu_load_status(request: HttpRequest) -> JsonResponse:
     try:
         # Import | Libraries
         import psutil

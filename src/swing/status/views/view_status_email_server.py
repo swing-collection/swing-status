@@ -1,8 +1,8 @@
 from django.core.mail import BadHeaderError, send_mail
-from django.http import JsonResponse
+from django.http import HttpRequest, JsonResponse
 
 
-def email_server_status(request):
+def email_server_status(request: HttpRequest) -> JsonResponse:
     try:
         send_mail(
             "Email Server Status Check",
